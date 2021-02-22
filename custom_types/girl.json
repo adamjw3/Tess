@@ -1,0 +1,114 @@
+{
+    "Main": {
+        "name": {
+            "type": "StructuredText",
+            "config": {
+                "single": "heading1",
+                "label": "Name",
+                "placeholder": "Name"
+            }
+        },
+        "main_image": {
+            "type": "Image",
+            "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Main Image"
+            }
+        },
+        "video": {
+            "type": "Embed",
+            "config": {
+                "label": "Video",
+                "placeholder": "Video"
+            }
+        },
+        "images": {
+            "type": "Group",
+            "config": {
+                "fields": {
+                    "image": {
+                        "type": "Image",
+                        "config": {
+                            "constraint": {},
+                            "thumbnails": [],
+                            "label": "Image"
+                        }
+                    }
+                },
+                "label": "Images"
+            }
+        },
+        "height": {
+            "type": "Text",
+            "config": {
+                "label": "Height",
+                "placeholder": "Height"
+            }
+        },
+        "hair": {
+            "type": "Text",
+            "config": {
+                "label": "Hair",
+                "placeholder": "Hair"
+            }
+        },
+        "eyes": {
+            "type": "Text",
+            "config": {
+                "label": "Eyes",
+                "placeholder": "Eyes"
+            }
+        },
+        "dress": {
+            "type": "Text",
+            "config": {
+                "label": "Dress",
+                "placeholder": "Dress"
+            }
+        },
+        "curves": {
+            "type": "Text",
+            "config": {
+                "label": "Curves",
+                "placeholder": "Curves"
+            }
+        },
+        "age": {
+            "type": "Text",
+            "config": {
+                "label": "Age",
+                "placeholder": "Age"
+            }
+        },
+        "about": {
+            "type": "Text",
+            "config": {
+                "label": "About",
+                "placeholder": "About"
+            }
+        },
+        "duration": {
+            "type": "Group",
+            "config": {
+                "fields": {
+                    "time": {
+                        "type": "Text",
+                        "config": {
+                            "label": "Time",
+                            "placeholder": "Time"
+                        }
+                    },
+                    "price": {
+                        "type": "Text",
+                        "config": {
+                            "label": "Price",
+                            "placeholder": "Price"
+                        }
+                    }
+                },
+                "label": "Duration"
+            }
+        }
+    }
+}

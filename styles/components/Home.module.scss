@@ -1,3 +1,5 @@
+@import "../components";
+
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -5,6 +7,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.imageContainer {
+   @include make-col-ready;
+   @include make-col(12);
 }
 
 .main {
@@ -50,6 +57,7 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  color: $color-validation-error;
 }
 
 .title,
