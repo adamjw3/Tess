@@ -1,32 +1,14 @@
-import Prismic from 'prismic-javascript'
+import Prismic from "prismic-javascript";
 
 // -- Prismic API endpoint
 // Determines which repository to query and fetch data from
 // Configure your site's access point here
-export const apiEndpoint = 'https://tessnoir.cdn.prismic.io/api/v2'
+export const apiEndpoint = process.env.PRISMIC_URL;
 
 // -- Access Token if the repository is not public
 // Generate a token in your dashboard and configure it here if your repository is private
-export const accessToken = 'MC5ZREtLQ3hFQUFDc0EtTUNh.77-977-9d--_ve-_vSvvv70nHGcdWSPvv73vv73vv70D77-977-9bHRMXe-_vRfvv70X77-977-9QH0A'
-
-// -- Link resolution rules
-// Manages links to internal Prismic documents
-// Modify as your project grows to handle any new routes you've made
-export const linkResolver = (doc) => {
-  if (doc.type === 'post') {
-    return `/blog/${doc.uid}`
-  }
-  return '/'
-}
-
-// Additional helper function for Next/Link components
-export const hrefResolver = (doc) => {
-  if (doc.type === 'post') {
-    return `/post?uid=${doc.uid}`
-  }
-  return '/'
-}
+export const accessToken = process.env.PRISMIC_API_TOKEN;
 
 // -- Client method to query Prismic
 // Connects to the given repository to facilitate data queries
-export const client = Prismic.client(apiEndpoint, { accessToken })
+export const client = Prismic.client(apiEndpoint, { accessToken });

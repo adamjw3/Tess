@@ -1,37 +1,41 @@
-import { useRouter } from 'next/router'
-import { getGirl, getGirlByUid } from '../../lib/api'
+import { client } from "../../prismic-configuration";
+import { RichText } from "prismic-reactjs";
+import Prismic from "prismic-javascript";
+
 import styles from '../../styles/components/Home.module.scss'
 
 
-export default function Post({ girl, preview }) {
-  const { name, height } = girl.edges[0].node
-
+export default function Post({ data }) {
+  console.log(data.name[0].text);
   return (
     <div className="container">
       <div className={styles.imageContainer}>
-      <span className={styles.title}>{name[0].text}</span>
+        {data.name[0].text}
       </div>
-      {height}
     </div>
   )
 }
 
-export async function getStaticProps({ params, preview = false, previewData }) {
-  const data = await getGirlByUid(params.uid, previewData)
-
+export async function getStaticProps({ params }) {
+  const { uid } = params;
+  const { data } = await client.getByUID("girl", uid);
   return {
-    props: {
-      preview,
-      girl: data?.allGirls ?? null,
-    },
-  }
+    props: { data },
+  };
 }
 
 export async function getStaticPaths() {
-  const allGirls = await getGirl()
+  const { results } = await client.query(
+    Prismic.Predicates.at("document.type", "girl")
+  );
 
+  const paths = results.map((post) => ({
+    params: {
+      uid: post.uid,
+    },
+  }));
   return {
-    paths: allGirls?.map(({ node }) => `/girl/${node._meta.uid}`) || [],
-    fallback: true,
-  }
+    paths,
+    fallback: false,
+  };
 }
