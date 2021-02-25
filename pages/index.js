@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { client } from "../prismic-configuration";
-import styles from '../styles/components/home.module.scss'
+import styles from '../styles/components/index.module.scss'
 
 export default function Home({home}) {
   return (
