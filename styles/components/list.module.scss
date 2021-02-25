@@ -3,6 +3,7 @@
 .item {
     @include make-col-ready;
     @include make-col(4);
+    margin-bottom: 20px;
 }
 
 .link {
@@ -12,9 +13,10 @@
 }
 
 .image {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 .title {
-
+    @include font-size(1.6);
 }
