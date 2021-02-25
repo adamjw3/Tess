@@ -1,0 +1,20 @@
+@import "../components";
+
+.item {
+    @include make-col-ready;
+    @include make-col(4);
+}
+
+.link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.image {
+    margin-bottom: 20px;
+}
+
+.title {
+
+}

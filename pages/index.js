@@ -34,7 +34,7 @@ export default function Home({home}) {
 
 export async function getStaticProps() {
   const home = await client.getSingle("home")
-  console.log("home", home)
+
   return {
     props: {
       home
