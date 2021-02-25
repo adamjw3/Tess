@@ -1,0 +1,15 @@
+@import "../components";
+
+.imageContainer {
+    @include make-col-ready;
+    @include make-col(4);
+}
+
+.detailsContainer {
+    @include make-col-ready;
+    @include make-col(8);
+}
+
+.name {
+    @include heading-xlarge;
+}
