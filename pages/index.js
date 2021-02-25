@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from "next/link"
 import { client } from "../prismic-configuration";
 import styles from '../styles/components/index.module.scss'
 
@@ -10,22 +11,30 @@ export default function Home({home}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="row">
-         <img src="/logo.svg" className={styles.logo} />
+        <Link href="/">
+          <a>
+            <img src="/logo.svg" className={styles.logo} />
+          </a>
+        </Link>
         <div className={styles.col}>
-            <a href="/" className={styles.link}>
-              <span className={styles.holder}>
-                <img src={home.data.good_girl.url} className={styles.image}/>
-                <span className={styles.title}>Good Girl</span>
-              </span>
-            </a>
+            <Link href="/good">
+              <a className={styles.link}>
+                <span className={styles.holder}>
+                  <img src={home.data.good_girl.url} className={styles.image}/>
+                  <span className={styles.title}>Good Girl</span>
+                </span>
+              </a>
+            </Link>
         </div>
          <div className={styles.col}>
-           <a href="/" className={styles.link}>
-              <span className={styles.holder}>
-                <img src={home.data.bad_girl.url}  className={styles.image}/>
-                <span className={styles.title}>Bad Girl</span>
-              </span>
-            </a>
+           <Link href="/bad">
+              <a className={styles.link}>
+                <span className={styles.holder}>
+                  <img src={home.data.bad_girl.url}  className={styles.image}/>
+                  <span className={styles.title}>Bad Girl</span>
+                </span>
+              </a>
+            </Link>
         </div>  
       </div>
     </div>
