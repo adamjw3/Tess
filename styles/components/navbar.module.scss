@@ -59,7 +59,7 @@
         position: fixed;
         top: 0;
         width: 100%;
-        z-index: $z-index-1--navbar-links;
+        z-index: 200;
     }
 
     @include media-breakpoint-up(md) {
@@ -119,14 +119,14 @@
 // -----------------------------------------------------------------------------
 
 // 1
-.navbar__links.is-active {
+.navbar__links.isActive {
     @include media-breakpoint-down(sm) {
         display: inline-block;
     }
 }
 
 // 2
-.navbar__menu.is-active {
+.navbar__menu.isActive {
     i::before {
         @extend .icon-close:before;
     }
