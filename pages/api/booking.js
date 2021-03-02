@@ -1,3 +1,6 @@
 export default function handler(req, res) {
-  res.status(200).json({ user: 'Ada Lovelace' })
+  if (req.method === 'POST') {
+    // Process a POST request
+    console.log("req", req.body);
+  } 
 }

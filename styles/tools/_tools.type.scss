@@ -17,11 +17,11 @@
 // 1
 @font-face{
     font-family:"Avenir Next LT W01 Bold";
-    src:url("/resources/fonts/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix");
-    src:url("/resources/fonts/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix") format("eot"),
-    url("/resources/fonts/b8e906a1-f5e8-4bf1-8e80-82c646ca4d5f.woff") format("woff"),
-    url("/resources/fonts/890bd988-5306-43ff-bd4b-922bc5ebdeb4.ttf") format("truetype"),
-    url("/resources/fonts/ed104d8c-7f39-4e8b-90a9-4076be06b857.svg#ed104d8c-7f39-4e8b-90a9-4076be06b857") format("svg");
+    src:url("/fonts/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix");
+    src:url("/fonts/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix") format("eot"),
+    url("/fonts/b8e906a1-f5e8-4bf1-8e80-82c646ca4d5f.woff") format("woff"),
+    url("/fonts/890bd988-5306-43ff-bd4b-922bc5ebdeb4.ttf") format("truetype"),
+    url("/fonts/ed104d8c-7f39-4e8b-90a9-4076be06b857.svg#ed104d8c-7f39-4e8b-90a9-4076be06b857") format("svg");
 }
 
 @mixin font-avenir-next-bold() {
@@ -31,26 +31,43 @@
 // 2
 @font-face{
 	font-family:"Avenir Next W01 Light";
-	src:url("/resources/fonts/0ecef829-586e-426d-a633-4c8a8c926769.eot?#iefix");
-	src:url("/resources/fonts/0ecef829-586e-426d-a633-4c8a8c926769.eot?#iefix") format("eot"),
-	url("/resources/fonts/49c5f3e1-5867-4b1d-a843-2d07fa60d85d.woff2") format("woff2"),
-	url("/resources/fonts/f401df6f-54eb-406c-b46a-90b9451c598d.woff") format("woff"),
-	url("/resources/fonts/276fe25e-e430-4376-b33c-705dd77b3dba.ttf") format("truetype"),
-	url("/resources/fonts/869dc33b-3685-4d74-a51c-82b435579093.svg#869dc33b-3685-4d74-a51c-82b435579093") format("svg");
+	src:url("/fonts/0ecef829-586e-426d-a633-4c8a8c926769.eot?#iefix");
+	src:url("/fonts/0ecef829-586e-426d-a633-4c8a8c926769.eot?#iefix") format("eot"),
+	url("/fonts/49c5f3e1-5867-4b1d-a843-2d07fa60d85d.woff2") format("woff2"),
+	url("/fonts/f401df6f-54eb-406c-b46a-90b9451c598d.woff") format("woff"),
+	url("/fonts/276fe25e-e430-4376-b33c-705dd77b3dba.ttf") format("truetype"),
+	url("/fonts/869dc33b-3685-4d74-a51c-82b435579093.svg#869dc33b-3685-4d74-a51c-82b435579093") format("svg");
 }
 
 @mixin font-avenir-next-light() {
 	font-family: "Avenir Next W01 Light", Arial;
 }
 
+@font-face {
+  font-family: 'Lobster-Regular';
+  src: url('/fonts/Lobster-Regular.eot');
+  src: url('/fonts/Lobster-Regular.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/Lobster-Regular.svg#Lobster-Regular') format('svg'),
+       url('/fonts/Lobster-Regular.ttf') format('truetype'),
+       url('/fonts/Lobster-Regular.woff') format('woff'),
+       url('/fonts/Lobster-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin font-lobster-regular() {
+    font-family: "Lobster-Regular", Arial;
+}
+
+
 // 3
 @font-face {
 	font-family: 'icomoon';
-	src: url('/resources/fonts/icomoon.eot?cwi28p');
-	src: url('/resources/fonts/icomoon.eot?#iefixcwi28p') format('embedded-opentype'),
-	url('/resources/fonts/icomoon.woff?cwi28p') format('woff'),
-	url('/resources/fonts/icomoon.ttf?cwi28p') format('truetype'),
-	url('/resources/fonts/icomoon.svg?cwi28p#icomoon') format('svg');
+	src: url('/fonts/icomoon.eot?cwi28p');
+	src: url('/fonts/icomoon.eot?#iefixcwi28p') format('embedded-opentype'),
+	url('/fonts/icomoon.woff?cwi28p') format('woff'),
+	url('/fonts/icomoon.ttf?cwi28p') format('truetype'),
+	url('/fonts/icomoon.svg?cwi28p#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

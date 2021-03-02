@@ -2,10 +2,13 @@ import { client } from "../prismic-configuration";
 import { RichText } from "prismic-reactjs";
 import Prismic from "prismic-javascript";
 import Link from "next/link"
+import Navigation from "../components/Navigation"
 import styles from '../styles/components/list.module.scss'
 
 function good({ data }) {
     return (
+        <>
+        <Navigation></Navigation>
         <div className="container">
             <div className="row">
                  {
@@ -22,6 +25,7 @@ function good({ data }) {
                  }
             </div>
         </div>
+    </>
     )
 }
 

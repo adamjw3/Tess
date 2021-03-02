@@ -12,9 +12,14 @@
 
 .col {
    @include make-col-ready;
-   @include make-col(6);
+   @include make-col(12);
    background-color: black;
-   height: 100vh;
+   height: 50vh;
+
+   @include media-breakpoint-up(md) {
+     @include make-col(6);
+     height: 100vh;
+   }
 }
 
 .col:first-of-type {
@@ -41,8 +46,13 @@
 }
 
 .title {
-  @include font-size(7.2);
+  @include font-size(3.2);
+  @include font-lobster-regular;
   color:#AF9645;
   display: block;
   margin-top: 20px;
+
+  @include media-breakpoint-up(md) {
+    @include font-size(7.2);
+  }
 }
