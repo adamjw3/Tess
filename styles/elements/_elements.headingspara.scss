@@ -20,7 +20,7 @@
 
 // 1
 @mixin heading() {
-    @include font-avenir-next-bold;
+    @include font-lobster-regular;
     @include font-size(1.5);
     line-height: 120%;
 
@@ -47,7 +47,7 @@
 
 // 2
 @mixin heading-xlarge() {
-    @include font-avenir-next-bold;
+    @include font-lobster-regular;
     @include font-size(2.5);
     line-height: 110%;
 
@@ -78,7 +78,7 @@
 
 // 3
 @mixin heading-large() {
-    @include font-avenir-next-bold;
+    @include font-lobster-regular;
     @include font-size(2.0);
     line-height: 120%;
 
@@ -109,7 +109,7 @@
 
 // 4
 @mixin heading-small() {
-    @include font-avenir-next-bold;
+    @include font-lobster-regular;
     @include font-size(1.3);
     line-height: 120%;
 
@@ -150,6 +150,23 @@
 
 .para {
     @include para;
+}
+
+@mixin para-xlarge() {
+    line-height: 140%;
+    @include font-size(2.0);
+
+    @include media-breakpoint-up(sm) {
+        @include font-size(2.4);
+    }
+
+    @include media-breakpoint-up(md) {
+        @include font-size(3.0);
+    }
+}
+
+.para-xlarge {
+    @include para-xlarge;
 }
 
 // 6

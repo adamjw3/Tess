@@ -1,0 +1,27 @@
+@import "../components";
+
+.header {
+     @include make-col-ready;
+    @include make-col(12);
+}
+
+.header h1 {
+    @include heading-large;
+    text-align: center;
+    margin-bottom: $unit;
+}
+
+.intro {
+    @include make-col-ready;
+    @include make-col(6);
+}
+
+.intro p {
+    @include para;
+    margin-bottom: $unit-small;
+}
+
+.formWrapper {
+    @include make-col-ready;
+    @include make-col(6);
+}

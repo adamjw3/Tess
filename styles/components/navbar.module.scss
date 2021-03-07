@@ -52,7 +52,7 @@
 .navbar__links {
     @include media-breakpoint-down(sm) {
         @include text-center;
-        background-color: $color-navbar-links-bg;
+        background-color: #000000;
         display: none;
         height: 100%;
         left: 0;
@@ -67,10 +67,23 @@
     }
 }
 
+.navbar__numbers {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
+
 .navbar__list {
     @include media-breakpoint-down(sm) {
         @include vertical-center();
     }
+    
+     @include media-breakpoint-up(md) {
+         display: flex;
+         align-items: center;
+     }
 }
 
 .navbar__item {
@@ -92,6 +105,26 @@
 
 .navbar__link {
     @include para;
+    text-decoration: none;
+
+     @include media-breakpoint-down(sm) {
+         color: #ffffff;
+     }
+}
+
+.navbar__linklarge {
+    @include para-xlarge;
+    color: #AF9645 !important;
+    text-decoration: none;
+
+     @include media-breakpoint-down(sm) {
+         color: #AF9645;
+     }
+}
+
+.navbar__linkImage {
+    display: block;
+    width: 50px;
 }
 
 .navbar__menu {
@@ -104,6 +137,10 @@
 
     i {
         @include font-size(3);
+
+        :global(.dark-mode) & {
+            color: white;
+        }
     }
 }
 

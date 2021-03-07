@@ -36,4 +36,13 @@ body {
     //@include font-lobster-regular;
     background-color: $color-page-bg; // 2
     color: $color-page-text; // 3
+
+    
+    &.dark-mode {
+         background-color: #000000;
+    }
+
+    &.light-mode {
+         background-color: #ffffff;
+    }
 }

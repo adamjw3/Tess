@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { client } from "../prismic-configuration";
 import { RichText } from "prismic-reactjs";
 import Prismic from "prismic-javascript";
@@ -6,6 +7,11 @@ import Layout from '../components/Layout'
 import styles from '../styles/components/list.module.scss'
 
 function good({ data }) {
+     useEffect( () => { 
+        document.querySelector("body").classList.add("light-mode") 
+        document.querySelector("body").classList.remove("dark-mode") 
+    });
+
     return (
         <Layout>
             <div className="container">

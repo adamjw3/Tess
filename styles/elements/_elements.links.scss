@@ -16,9 +16,7 @@ a {
     color: $color-page-text;
     text-decoration: underline;
 
-    html.no-touchevents & {
-        @include hocus {
-            text-decoration: none;
-        }
+    body.dark-mode & {
+        color: #ffffff;
     }
 }

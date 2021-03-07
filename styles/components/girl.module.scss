@@ -3,13 +3,127 @@
 .imageContainer {
     @include make-col-ready;
     @include make-col(4);
+
+    img {
+        width: 100%
+    }
 }
 
 .detailsContainer {
     @include make-col-ready;
-    @include make-col(8);
+    @include make-col(7);
+    @include make-col-offset(1);
 }
 
 .name {
     @include heading-xlarge;
+    color: #AF9645;
+    margin-bottom: $unit-xlarge
+}
+
+.statsConatiner {
+    @include make-col-ready;
+    @include make-col(4);
+}
+
+.statsHeader {
+    @include heading;
+    color: #AF9645;
+    margin-bottom: $unit;
+}
+
+.aboutHeader {
+    @include heading;
+    color: #AF9645;
+    margin-bottom: $unit;
+}
+
+.stats {
+   display: flex;
+   flex-flow: row wrap;
+   margin-bottom: $unit-xlarge;
+
+    :global(.dark-mode) & {
+        color: white;
+    }
+
+   dt{
+    flex-basis: 30%;
+    @include para;
+    margin-bottom: $unit-xsmall;
+   }
+
+   dd {
+    flex-basis: 70%;
+    flex-grow: 1;
+    @include para;
+    margin-bottom: $unit-xsmall;
+   }
+}
+
+.aboutConatiner {
+    @include make-col-ready;
+    @include make-col(6);
+}
+
+.aboutContent {
+    @include para;
+    margin-bottom: $unit-xlarge;
+
+    :global(.dark-mode) & {
+        color: white;
+    }
+
+    p {
+        margin-bottom: $unit;
+    }
+}
+
+.priceContainer {
+    @include make-col-ready;
+    @include make-col(6);
+}
+
+.priceTable {
+    margin-bottom: $unit-xlarge;
+    @include para;
+
+    th {
+        @include heading;
+        color: #AF9645;
+        padding-right: $unit-xxlarge * 2;
+        padding-bottom: $unit-small;
+    }
+
+    td {
+        padding-bottom: $unit;
+        
+        :global(.dark-mode) & {
+            color: white;
+        }
+    }
+    
+}
+
+.disclaimerContainer {
+    @include make-col-ready;
+    @include make-col(8);
+}
+
+.disclaimerHeader {
+    @include heading;
+    color: #AF9645;
+    margin-bottom: $unit;
+}
+
+.disclaimerContent {
+    @include para;
+
+    :global(.dark-mode) & {
+        color: white;
+    }
+
+    p {
+        margin-bottom: $unit;
+    }
 }
