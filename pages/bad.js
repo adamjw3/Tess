@@ -21,8 +21,11 @@ function bad({ data }) {
                             <div className={styles.item} key={index}>
                                 <Link href={`/girl/${encodeURIComponent(item.uid)}`}>
                                     <a  className={styles.link}>
-                                        <img src={item.data.main_image.url} alt={item.data.main_image.alt} className={styles.image}/>
-                                        <span className={styles.title}>{item.data.name[0].text}</span>
+                                        <div className={styles.imageContainer}>
+                                            <img src={item.data.main_image.url} alt={item.data.main_image.alt} className={styles.image}/>
+                                         </div>
+                                            <span className={styles.title}>{item.data.name[0].text}</span>
+                                       
                                     </a>
                                 </Link>
                             </div>

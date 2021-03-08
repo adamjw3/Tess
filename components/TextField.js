@@ -6,9 +6,9 @@ const TextField = ({ label, ...props }) => {
    // message if the field is invalid and it has been touched (i.e. visited)
    const [field, meta] = useField(props);
    return (
-     <div>
-       <label htmlFor={props.id || props.name}>{label}</label>
-       <input className="text-input" {...field} {...props} />
+     <div className="form__textbox-field">
+       <label htmlFor={props.id || props.name} className="form__label">{label}</label>
+       <input className="form__textbox" {...field} {...props} />
        {meta.touched && meta.error ? (
          <div className="error">{meta.error}</div>
        ) : null}

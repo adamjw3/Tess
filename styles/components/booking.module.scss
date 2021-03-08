@@ -6,9 +6,11 @@
 }
 
 .header h1 {
-    @include heading-large;
+    @include heading-xlarge;
+    @include font-lobster-regular;
+    color:#AF9645;
     text-align: center;
-    margin-bottom: $unit;
+    margin-bottom: $unit-xlarge;
 }
 
 .intro {
@@ -18,6 +20,7 @@
 
 .intro p {
     @include para;
+    color: white;
     margin-bottom: $unit-small;
 }
 

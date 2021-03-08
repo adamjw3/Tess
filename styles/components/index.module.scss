@@ -35,6 +35,11 @@
   text-align: center;
   padding: 40px 0;
   text-decoration: none;
+  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 .holder {

@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import DatePicker from "react-datepicker";
@@ -11,6 +12,11 @@ import Layout from '../components/Layout'
 import styles from '../styles/components/booking.module.scss'
 
 function booking() {
+     useEffect( () => { 
+        document.querySelector("body").classList.remove("light-mode") 
+        document.querySelector("body").classList.add("dark-mode") 
+    });
+
     return (
         <Layout>
             <div className="container">
