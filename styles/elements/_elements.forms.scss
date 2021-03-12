@@ -60,13 +60,14 @@
   color: $color-form-input-text;
   line-height: 100%;
   outline: none;
-  padding: $unit;
+  padding: $unit-small;
   width: 100%;
 }
 
 .form__textbox {
   @include form-textbox;
 }
+
 
 // 2
 .form__textbox.error {
@@ -94,7 +95,7 @@
   border: 1px solid $color-form-input-border;
   color: $color-form-input-text;
   outline: none;
-  padding: $unit;
+  padding: $unit-small;
   width: 100%;
 }
 
@@ -359,3 +360,9 @@
   color: $color-form-validation-text-success;
   padding: $unit;
 }
+
+
+.react-datepicker-wrapper {
+  display: block !important
+}
+

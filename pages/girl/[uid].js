@@ -53,7 +53,7 @@ export default function Post({ data }) {
                     <img src={item.image.url} alt={item.image.alt} key={index}/>
                   )}
             </Carousel>
-            <Link href="/booking"><a>Book Now</a></Link>
+            <Link href="/booking"><a className={`${styles.booknow} btn`}>Book Now</a></Link>
           </div>
           <div className={styles.detailsContainer}>
             <h1 className={styles.name}>{data.name[0].text}</h1>

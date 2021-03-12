@@ -59,7 +59,7 @@
         position: fixed;
         top: 0;
         width: 100%;
-        z-index: 200;
+        z-index: 3000;
     }
 
     @include media-breakpoint-up(md) {
@@ -71,8 +71,19 @@
     display: flex;
     align-items: center;
     position: absolute;
-    top: 0;
+    top: -10px;
     right: 15px;
+
+     @include media-breakpoint-up(md) {
+         top: 0;
+     }
+
+    .navbar__item:last-of-type {
+         @include media-breakpoint-down(sm) {
+             margin-left: 10px;
+        }
+    }
+   
 }
 
 .navbar__list {
@@ -118,18 +129,23 @@
     text-decoration: none;
 
      @include media-breakpoint-down(sm) {
+         @include font-size(2);
          color: #AF9645;
      }
 }
 
 .navbar__linkImage {
     display: block;
-    width: 50px;
+    width: 30px;
+
+     @include media-breakpoint-up(md) {
+         width: 50px;
+     }
 }
 
 .navbar__menu {
     position: relative;
-    z-index: $z-index-2--navbar-menu;
+    z-index: 40000;
 
     @include media-breakpoint-up(md) {
         display: none;
@@ -164,7 +180,9 @@
 
 // 2
 .navbar__menu.isActive {
+    color: white;
     i::before {
+        color: white;
         @extend .icon-close:before;
     }
 }

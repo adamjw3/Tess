@@ -36,10 +36,10 @@
 .image {
     width: 100%;
     transform: scale(1);
-    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
     &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 

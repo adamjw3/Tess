@@ -7,6 +7,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import TextField from "../components/TextField"
 import SelectBox from "../components/SelectBox"
+import TextAreaField from "../components/TextAreaField"
+import DateField from "../components/DateField"
 
 import Layout from '../components/Layout'
 import styles from '../styles/components/booking.module.scss'
@@ -39,16 +41,15 @@ function booking() {
                                 customerName: '',
                                 phone: '',
                                 email: '',
-                                acceptedTerms: false, // added for our checkbox
                                 escort: '', // added for our select
                                 incallOutcall: '',
+                                duration: '',
+                                dateTime: '',
                                 }}
                             validationSchema={Yup.object({
                                 customerName: Yup.string()
-                                    .max(15, 'Must be 15 characters or less')
                                     .required('Required'),
                                 phone: Yup.string()
-                                    .max(20, 'Must be 20 characters or less')
                                     .required('Required'),
                                 email: Yup.string()
                                     .email('Invalid email address')
@@ -57,12 +58,16 @@ function booking() {
                                     .oneOf(
                                     ['designer', 'development', 'product', 'other'],
                                     'Invalid Job Type'
-                                    ),
+                                    ).required('Required'),
                                 incallOutcall: Yup.string()
                                     .oneOf(
                                     ['incall', 'outcall'],
                                     'Invalid Type'
                                     )
+                                    .required('Required'),
+                                duration: Yup.string()
+                                    .required('Required'),
+                                dateTime: Yup.string()
                                     .required('Required'),
                             })}
                             onSubmit={async(values, { setSubmitting }) => {
@@ -122,17 +127,33 @@ function booking() {
                                     placeholder="John@gmail.com"
                                 />
 
-                                <DatePicker
-                                    selected={(values.date && new Date(values.date)) || null}
-                                    onChange={date => setFieldValue("date", date)}
+                                <DateField 
+                                    selected={(values.dateTime && new Date(values.dateTime)) || null}
+                                    onChange={dateTime => setFieldValue("dateTime", dateTime)}
                                     showTimeSelect
                                     timeFormat="HH:mm"
                                     timeIntervals={15}
                                     timeCaption="time"
                                     dateFormat="MMMM d, yyyy h:mm aa"
-                                    />
+                                    className="form__textbox"
+                                    name="dateTime"
+                                    label="Date and Time"
+                                />
 
-                                <button type="submit">Submit</button>
+                                <TextField
+                                    label="Duration"
+                                    name="duration"
+                                    type="text"
+                                    placeholder="duration"
+                                />
+
+                                <TextAreaField
+                                    label="Special Instructions"
+                                    name="specialInstructions"
+                                    placeholder="Any speacil request or instructions"
+                                />
+
+                                <button type="submit" className="btn">Submit</button>
                             </Form>
                         )}}
                         </Formik>

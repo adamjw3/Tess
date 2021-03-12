@@ -8,7 +8,7 @@
        <div className="selectbox">
         <select {...field} {...props} className="selectbox__select"/>
         {meta.touched && meta.error ? (
-          <div className="error">{meta.error}</div>
+          <div className="form__validation--error">{meta.error}</div>
         ) : null}
       </div>
      </div>

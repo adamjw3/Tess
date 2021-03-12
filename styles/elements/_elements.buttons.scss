@@ -1,0 +1,99 @@
+// =============================================================================
+// Buttons
+// =============================================================================
+
+// Button
+// -----------------------------------------------------------------------------
+//
+// Purpose: Button variations
+//
+//
+// 1. Optional icon
+//
+// -----------------------------------------------------------------------------
+
+.btn {
+    @include font-lobster-regular;
+    @include font-size(3);
+    background-color: #AF9645;
+    border: solid 1px #AA8408;
+    border-radius: 10px;
+    color: $color-btn-text;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 100%;
+    margin: 0;
+    padding: $unit-small $unit-xxlarge;
+    text-decoration: none;
+
+    @include hocus {
+        background-color: $color-btn-hover-bg;
+        color: $color-btn-hover-text;
+    }
+
+    // 1
+    i {
+        display: inline-block;
+        margin-left: $unit-xxsmall;
+        vertical-align: bottom;
+    }
+}
+
+// Button Modifiers
+// -----------------------------------------------------------------------------
+//
+// Purpose: Enhances or removes styles from default buttons
+//
+//
+// 1. Button using the primary brand colours
+// 2. Button using the secondary brand colours
+// 3. Large button
+// 4. Small button
+// 5. Compact button
+//
+// -----------------------------------------------------------------------------
+
+// 1
+.btn--primary {
+    background-color: $color-btn-primary-bg;
+    border-color: $color-btn-primary-text;
+    color: $color-btn-primary-text;
+
+    html.no-touchevents & {
+        @include hocus {
+            background-color: $color-btn-primary-hover-bg;
+            border-color: $color-btn-primary-hover-text;
+            color: $color-btn-primary-hover-text;
+        }
+    }
+}
+
+// 2
+.btn--secondary {
+    background-color: $color-btn-secondary-bg;
+    border-color: $color-btn-secondary-text;
+    color: $color-btn-secondary-text;
+
+    html.no-touchevents & {
+        @include hocus {
+            background-color: $color-btn-secondary-hover-bg;
+            border-color: $color-btn-secondary-hover-text;
+            color: $color-btn-secondary-hover-text;
+        }
+    }
+}
+
+// 3
+.btn--large {
+    padding: $unit-large $unit-xlarge;
+}
+
+// 4
+.btn--small {
+    padding: $unit-small $unit;
+}
+
+// 5
+.btn--compact {
+    padding: $unit-xsmall $unit-small;
+}

@@ -1,7 +1,7 @@
 @import "../components";
 
 .header {
-     @include make-col-ready;
+    @include make-col-ready;
     @include make-col(12);
 }
 
@@ -15,7 +15,12 @@
 
 .intro {
     @include make-col-ready;
-    @include make-col(6);
+    @include make-col(12);
+    margin-bottom: $unit;
+
+    @include media-breakpoint-up(md) {
+        @include make-col(6);
+    }
 }
 
 .intro p {
@@ -26,5 +31,9 @@
 
 .formWrapper {
     @include make-col-ready;
-    @include make-col(6);
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(6);
+    }
 }

@@ -1,9 +1,14 @@
+import React, { useEffect } from 'react';
 import Head from 'next/head'
 import Link from "next/link"
 import { client } from "../prismic-configuration";
 import styles from '../styles/components/index.module.scss'
 
 export default function Home({home}) {
+  useEffect( () => {
+        document.querySelector("body").classList.add("dark-mode") 
+    });
+
   return (
     <div className="container-full">
        <Head>
