@@ -45,4 +45,8 @@ body {
     &.light-mode {
          background-color: #ffffff;
     }
+
+    > div {
+        height: 100%;
+    }
 }

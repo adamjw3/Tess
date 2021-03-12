@@ -45,6 +45,7 @@ function booking() {
                                 incallOutcall: '',
                                 duration: '',
                                 dateTime: '',
+                                specialInstructions: ''
                                 }}
                             validationSchema={Yup.object({
                                 customerName: Yup.string()
@@ -78,6 +79,9 @@ function booking() {
                                         incallOutcall: values.incallOutcall,
                                         phone: values.phone,
                                         email: values.email,
+                                        dateTime: values.dateTime,
+                                        duration: values.duration,
+                                        specialInstructions: values.specialInstructions,
                                     }),
                                     headers: {
                                         'Content-Type': 'application/json'
@@ -99,34 +103,28 @@ function booking() {
                                     <option value="product">Maggie</option>
                                     <option value="other">Other</option>
                                 </SelectBox>
-
                                 <SelectBox label="Incall/Outcall" name="incallOutcall">
                                     <option value="">Select</option>
                                     <option value="incall">Incall</option>
                                     <option value="outcall">Outcall</option>
                                 </SelectBox>
-
-                                <TextField
-                                    label="Customer Name"
+                                <TextField label="Customer Name"
                                     name="customerName"
                                     type="text"
                                     placeholder="John"
                                 />
-
                                 <TextField
                                     label="Phone Number"
                                     name="phone"
                                     type="text"
                                     placeholder="07909765432"
                                 />
-
                                 <TextField
                                     label="Email Address"
                                     name="email"
                                     type="email"
                                     placeholder="John@gmail.com"
                                 />
-
                                 <DateField 
                                     selected={(values.dateTime && new Date(values.dateTime)) || null}
                                     onChange={dateTime => setFieldValue("dateTime", dateTime)}
@@ -139,20 +137,17 @@ function booking() {
                                     name="dateTime"
                                     label="Date and Time"
                                 />
-
                                 <TextField
                                     label="Duration"
                                     name="duration"
                                     type="text"
                                     placeholder="duration"
                                 />
-
                                 <TextAreaField
                                     label="Special Instructions"
                                     name="specialInstructions"
                                     placeholder="Any speacil request or instructions"
                                 />
-
                                 <button type="submit" className="btn">Submit</button>
                             </Form>
                         )}}
