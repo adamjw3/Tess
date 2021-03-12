@@ -347,10 +347,9 @@
 
 // 1
 .form__validation--error {
-  background-color: $color-form-validation-bg-error;
-  border: 1px solid $color-form-validation-border-error;
+  @include para-small;
   color: $color-form-validation-text-error;
-  padding: $unit;
+  padding: $unit-small 0;
 }
 
 // 2

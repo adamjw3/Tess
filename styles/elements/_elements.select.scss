@@ -42,6 +42,10 @@
     }
 }
 
+.selectbox__select.error {
+    border: 1px solid $color-form-validation-border-error;
+}
+
 // 1
 .selectbox::after {
     @extend .icomoon, .icon-arrow-down:before;

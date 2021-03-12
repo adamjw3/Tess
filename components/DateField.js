@@ -8,13 +8,13 @@ const DateField = ({ label, ...props }) => {
    // which we can spread on <input>. We can use field meta to show an error
    // message if the field is invalid and it has been touched (i.e. visited)
    const [field, meta] = useField(props);
+  const cssClass = meta.touched && meta.error ? "form__textbox error" : "form__textbox"
 
-   console.log("props", props)
    return (
      <div className="form__textbox-field">
        <label htmlFor={props.id || props.name} className="form__label">{label}</label>
        <DatePicker
-            className="form__textbox" {...field} {...props} 
+            className={cssClass} {...field} {...props} 
             />
        {meta.touched && meta.error ? (
          <div className="form__validation--error">{meta.error}</div>

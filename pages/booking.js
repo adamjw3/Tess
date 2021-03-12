@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
+import Prismic from "prismic-javascript";
+import { client } from "../prismic-configuration";
+import { RichText } from "prismic-reactjs";
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import DatePicker from "react-datepicker";
-
-import "react-datepicker/dist/react-datepicker.css";
 
 import TextField from "../components/TextField"
 import SelectBox from "../components/SelectBox"
@@ -13,7 +13,8 @@ import DateField from "../components/DateField"
 import Layout from '../components/Layout'
 import styles from '../styles/components/booking.module.scss'
 
-function booking() {
+function booking({ data }) {
+    console.log("data", data.results)
      useEffect( () => { 
         document.querySelector("body").classList.remove("light-mode") 
         document.querySelector("body").classList.add("dark-mode") 
@@ -56,15 +57,8 @@ function booking() {
                                     .email('Invalid email address')
                                     .required('Required'),
                                 escort: Yup.string()
-                                    .oneOf(
-                                    ['designer', 'development', 'product', 'other'],
-                                    'Invalid Job Type'
-                                    ).required('Required'),
+                                    .required('Required'),
                                 incallOutcall: Yup.string()
-                                    .oneOf(
-                                    ['incall', 'outcall'],
-                                    'Invalid Type'
-                                    )
                                     .required('Required'),
                                 duration: Yup.string()
                                     .required('Required'),
@@ -98,10 +92,9 @@ function booking() {
                             <Form>
                                 <SelectBox label="Escort" name="escort">
                                     <option value="">Select escort</option>
-                                    <option value="designer">Jess</option>
-                                    <option value="development">Tess</option>
-                                    <option value="product">Maggie</option>
-                                    <option value="other">Other</option>
+                                    { data.results.map((item, index) => 
+                                        <option key={index} value={item.data.name.text}>{item.data.name[0].text}</option>
+                                    )}
                                 </SelectBox>
                                 <SelectBox label="Incall/Outcall" name="incallOutcall">
                                     <option value="">Select</option>
@@ -133,7 +126,6 @@ function booking() {
                                     timeIntervals={15}
                                     timeCaption="time"
                                     dateFormat="MMMM d, yyyy h:mm aa"
-                                    className="form__textbox"
                                     name="dateTime"
                                     label="Date and Time"
                                 />
@@ -157,6 +149,16 @@ function booking() {
         </div>
     </Layout>
     )
+}
+
+export async function getStaticProps() {
+    const data = await client.query(
+        Prismic.Predicates.at('document.type', 'girl'),
+    );
+
+    return {
+        props: { data },
+    };
 }
 
 export default booking
