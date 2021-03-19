@@ -1,13 +1,7 @@
-const nodemailer = require("nodemailer");
-const sgTransport = require("nodemailer-sendgrid-transport");
+const dateFormat = require("dateformat");
+const sgMail = require("@sendgrid/mail");
 
-const options = {
-  auth: {
-    api_key: process.env.SENDGRID_PASSWORD,
-  },
-};
-
-const client = nodemailer.createTransport(sgTransport(options));
+sgMail.setApiKey(process.env.SENDGRID_APIKEY)
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
@@ -28,12 +22,13 @@ export default function handler(req, res) {
         </div>`,
     };
 
-    client.sendMail(email, function (err, info) {
-      if (err) {
-        return res.status(500).send(err);
-      } else {
-        res.json({ success: true, info });
-      }
-    });
+    sgMail
+      .send(email)
+      .then(() => {
+        return res;
+      })
+      .catch((error) => {
+        return res.status(500).send(error);
+      });
   } 
 }

@@ -66,7 +66,8 @@ function booking({ data }) {
                                     .required('Required'),
                             })}
                             onSubmit={async(values, { setSubmitting }) => {
-                                await fetch("/api/booking", {
+                              setSubmitting(true)
+                              const response =  await fetch("/api/booking", {
                                     body: JSON.stringify({
                                         escort: values.escort,
                                         customerName: values.customerName,
@@ -81,14 +82,18 @@ function booking({ data }) {
                                         'Content-Type': 'application/json'
                                     },
                                     method: 'POST'
-                            }
-                        )}}>
+                                })
+                            const data = await response.json();
+                            setSubmitting(false);
+                            console.log("response", data);
+                            }}>
                             {props => {
                         const {
                         values,
                         setFieldValue
                         } = props;
                         return (
+                            <div>
                             <Form>
                                 <SelectBox label="Escort" name="escort">
                                     <option value="">Select escort</option>
@@ -142,6 +147,20 @@ function booking({ data }) {
                                 />
                                 <button type="submit" className="btn">Submit</button>
                             </Form>
+                            {values.success && (
+                                <div>
+                                    <p>Your enquiry has been successfully submitted.</p>
+                                </div>
+                                )}
+                                {values.nosend && (
+                                <div>
+                                    <p>
+                                    OOPS, something went wrong but we know about it. please contact us via
+                                    email or phone
+                                    </p>
+                                </div>
+                                )}
+                            </div>
                         )}}
                         </Formik>
                     </div>

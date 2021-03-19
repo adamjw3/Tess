@@ -10,6 +10,7 @@ import styles from '../../styles/components/girl.module.scss'
 
 
 export default function Post({ data }) {
+  console.log("data", data)
   useEffect( () => { 
         document.querySelector("body").classList.remove("light-mode") 
         document.querySelector("body").classList.remove("dark-mode") 
@@ -35,7 +36,7 @@ export default function Post({ data }) {
         items: 1,
       }
     };
-    
+
   return (
     <Layout>
       <div className="container">
@@ -91,16 +92,13 @@ export default function Post({ data }) {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1hr</td>
-                      <td>£150</td>
-                      <td>£300</td>
-                    </tr>
-                    <tr>
-                      <td>2hr</td>
-                      <td>300</td>
-                      <td>£600</td>
-                    </tr>
+                    { data.duration.map((item, index) => 
+                      <tr key={index}>
+                        <td>{item.time}</td>
+                        <td>{item.incall}</td>
+                        <td>{item.outcall}</td>
+                      </tr>
+                    )}
                   </tbody>
                 </table>
               </div>
